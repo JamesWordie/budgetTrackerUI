@@ -1,0 +1,12 @@
+html {
+  /* 1 */
+  font-size: 62.5%;
+  font-family: $swiftcase-font;
+  font-weight: $swiftcase-super-lightweight;
+  line-height: 1.5;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */
+  background: $swiftcase-white;
+  color: $swiftcase-dark-blue;
+}

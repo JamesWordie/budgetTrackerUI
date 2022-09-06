@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&family=Roboto+Slab&display=swap");
+// https://www.apache.org/licenses/LICENSE-2.0
+// License for Roboto and Slab fonts as of 23.02.22
+// "These fonts are licensed under the Apache License, Version 2.0.
+// You can use them freely in your products & projects - print or digital, commercial or otherwise.
+// This isn't legal advice, please consider consulting a lawyer and see the full license for all details."
+
+$swiftcase-react-font: "Roboto", sans-serif;
+$swiftcase-font: "Montserrat", sans-serif;
+$swiftcase-secondary-font: "Roboto Slab", serif;
+
+// Font weights
+$swiftcase-super-lightweight: 300;
+$swiftcase-lightweight: 400;
+$swiftcase-midweight: 500;
+$swiftcase-semi-bold: 600;
+$swiftcase-bold: 700;
+$swiftcase-extra-bold: 900;
