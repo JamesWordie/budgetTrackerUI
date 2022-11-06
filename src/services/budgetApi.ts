@@ -1,4 +1,17 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import {
+  BaseQueryFn,
+  createApi,
+  FetchArgs,
+  fetchBaseQuery,
+} from "@reduxjs/toolkit/query/react";
+import { CustomTransformerFactory } from "typescript";
+
+interface CustomError {
+  data: {
+    msg?: string;
+  };
+  status: number;
+}
 
 /**
  * The base of the Budget API with the reducer, baseQuery, tagTypes for caching
@@ -6,7 +19,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const budgetApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: process.env.REACT_APP_BUDGET_URL,
-  }),
+  }) as BaseQueryFn<string | FetchArgs, unknown, CustomError, {}>,
   tagTypes: [
     "Unauthorized",
     "Unknown_Error",

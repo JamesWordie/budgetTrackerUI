@@ -30,7 +30,7 @@ const sessionApi = budgetApi.injectEndpoints({
     /**
      * POST register a user
      */
-    createANewUser: build.query<IUserResponse, IUserRequest>({
+    createANewUser: build.mutation<IUserResponse, IUserRequest>({
       query: (body) => ({
         url: "/users",
         method: "POST",
@@ -41,7 +41,10 @@ const sessionApi = budgetApi.injectEndpoints({
     /**
      * POST request to create a session (login) for a user
      */
-    createASession: build.query<ITokenResponse, null>({
+    createASession: build.mutation<
+      ITokenResponse,
+      Pick<IUserRequest, "email" | "password">
+    >({
       query: (body) => ({
         url: "/sessions",
         method: "POST",
@@ -56,7 +59,7 @@ const sessionApi = budgetApi.injectEndpoints({
     /**
      * DELETE the current session (logout)
      */
-    deleteASession: build.query<null, null>({
+    deleteASession: build.mutation<null, null>({
       query: () => ({
         url: "/sessions",
         method: "DELETE",
@@ -71,7 +74,7 @@ const sessionApi = budgetApi.injectEndpoints({
 
 export const {
   useGetAllSessionsQuery,
-  useCreateANewUserQuery,
-  useCreateASessionQuery,
-  useDeleteASessionQuery,
+  useCreateANewUserMutation,
+  useCreateASessionMutation,
+  useDeleteASessionMutation,
 } = sessionApi;
